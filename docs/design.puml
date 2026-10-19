@@ -1,0 +1,53 @@
+@startuml
+class PosController {
+repo: SQLiteRepository
+current_sale: Sale
+make_new_sale()
+enter_item(sku,count)
+end_sale()
+make_cash_payment(amount,token)
+find_sale(id)
+complete_return(id,items,token)
+}
+class Sale {
+lines: dict
+state: str
+add(product,count)
+total: int
+}
+class SalesLineItem {
+product: ProductDescription
+quantity: int
+subtotal: int
+}
+class ProductDescription {
+sku: str
+description: str
+price_cents: int
+}
+class Return {
+original_sale_id: str
+lines: list
+total: int
+}
+class ReturnLineItem {
+sku: str
+quantity: int
+original_price_cents: int
+restock: bool
+subtotal: int
+}
+class SQLiteRepository {
+db: Connection
+seed()
+catalog()
+product(sku)
+close()
+}
+PosController "1" --> "0..1" Sale
+PosController "1" --> "1" SQLiteRepository
+PosController ..> Return : creates
+Sale "1" *-- "0..*" SalesLineItem
+SalesLineItem "*" --> "1" ProductDescription
+Return "1" *-- "1..*" ReturnLineItem
+@enduml

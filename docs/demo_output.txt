@@ -1,0 +1,44 @@
+DEMO / isolated in-memory data / currency CNY
+Initial stock [('APPLE', 'Apple pack', 1200, 10), ('BREAD', 'Bread', 800, 15), ('MILK', 'Milk 1L', 650, 20)]
+Scan MILK x2: 13.00
+Scan BREAD x1: 21.00
+Total: 21.00
+{
+  "type": "SALE",
+  "id": "S-61a88f2ef0aa",
+  "date": "2026-10-19",
+  "total": "21.00",
+  "cash": "30.00",
+  "change": "9.00",
+  "lines": [
+    {
+      "sku": "MILK",
+      "qty": 2,
+      "unit_price": "6.50"
+    },
+    {
+      "sku": "BREAD",
+      "qty": 1,
+      "unit_price": "8.00"
+    }
+  ]
+}
+Stock after sale [('APPLE', 'Apple pack', 1200, 10), ('BREAD', 'Bread', 800, 14), ('MILK', 'Milk 1L', 650, 18)]
+{
+  "type": "RETURN",
+  "id": "R-05d4d5aca2e0",
+  "original_sale": "S-61a88f2ef0aa",
+  "date": "2026-10-19",
+  "cash_refund": "6.50",
+  "lines": [
+    {
+      "sku": "MILK",
+      "qty": 1,
+      "unit_price": "6.50",
+      "restock": true
+    }
+  ]
+}
+Retry returns same receipt: True
+Over-return rejected: Item not purchased or return quantity exceeds remaining allowance.
+Final stock [('APPLE', 'Apple pack', 1200, 10), ('BREAD', 'Bread', 800, 14), ('MILK', 'Milk 1L', 650, 19)]

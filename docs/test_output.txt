@@ -1,0 +1,26 @@
+Command: python -m unittest discover -s tests -v
+Local verification on 2026-10-19
+
+test_cancel_has_no_inventory_effect (test_pos.PosTests.test_cancel_has_no_inventory_effect) ... ok
+test_damaged_goods_not_restocked (test_pos.PosTests.test_damaged_goods_not_restocked) ... ok
+test_duplicate_sku_rejected (test_pos.PosTests.test_duplicate_sku_rejected) ... ok
+test_empty_sale (test_pos.PosTests.test_empty_sale) ... ok
+test_expired_receipt (test_pos.PosTests.test_expired_receipt) ... ok
+test_insufficient_stock_rolls_back_all_lines (test_pos.PosTests.test_insufficient_stock_rolls_back_all_lines) ... ok
+test_invalid_quantities_and_money (test_pos.PosTests.test_invalid_quantities_and_money) ... ok
+test_missing_receipt_and_unpurchased_sku (test_pos.PosTests.test_missing_receipt_and_unpurchased_sku) ... ok
+test_over_return_rejected (test_pos.PosTests.test_over_return_rejected) ... ok
+test_partial_return_and_original_price (test_pos.PosTests.test_partial_return_and_original_price) ... ok
+test_persistence_after_reopen (test_pos.PosTests.test_persistence_after_reopen) ... ok
+test_return_retry_is_idempotent (test_pos.PosTests.test_return_retry_is_idempotent) ... ok
+test_sale_retry_and_new_token (test_pos.PosTests.test_sale_retry_and_new_token) ... ok
+test_sale_total_change_and_stock (test_pos.PosTests.test_sale_total_change_and_stock) ... ok
+test_thirty_day_boundary (test_pos.PosTests.test_thirty_day_boundary) ... ok
+test_token_conflict (test_pos.PosTests.test_token_conflict) ... ok
+test_underpayment_has_no_effect (test_pos.PosTests.test_underpayment_has_no_effect) ... ok
+test_unknown_item (test_pos.PosTests.test_unknown_item) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.064s
+
+OK

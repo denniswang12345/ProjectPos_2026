@@ -1,0 +1,20 @@
+@startuml
+participant ":CashierUI" as UI
+participant ":PosController" as C
+participant ":Return" as T
+participant ":SQLiteRepository" as R
+UI -> C: complete_return(id, items, token)
+C -> R: BEGIN IMMEDIATE; check token
+alt exact replay
+R --> C: stored refund receipt
+else first request
+C -> R: load original sale and returned quantities
+C -> C: validate date, products and quantities
+C -> T: create(lines at original prices)
+C -> T: total
+C -> R: save return and refund
+C -> R: update cumulative returns; restock eligible goods
+C -> R: save token receipt; COMMIT
+end
+C --> UI: refund receipt
+@enduml

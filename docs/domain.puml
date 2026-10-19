@@ -1,0 +1,44 @@
+@startuml
+class Sale {
+saleId
+date
+total
+}
+class SalesLineItem {
+quantity
+originalUnitPrice
+returnedQuantity
+}
+class ProductDescription {
+itemId
+description
+currentPrice
+}
+class InventoryItem {
+quantityOnHand
+}
+class CashPayment {
+amountTendered
+change
+}
+class Return {
+returnId
+date
+}
+class ReturnLineItem {
+quantity
+originalUnitPrice
+restockEligible
+}
+class CashRefund {
+amount
+}
+Sale "1" -- "1..*" SalesLineItem : contains
+SalesLineItem "0..*" -- "1" ProductDescription : describes
+ProductDescription "1" -- "1" InventoryItem : tracked by
+Sale "1" -- "0..1" CashPayment : paid by
+Sale "1" -- "0..*" Return : original sale for
+Return "1" -- "1..*" ReturnLineItem : contains
+ReturnLineItem "0..*" -- "1" SalesLineItem : references
+Return "1" -- "1" CashRefund : settled by
+@enduml
