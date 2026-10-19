@@ -1,4 +1,4 @@
-# ProjectPos 2026
+﻿# ProjectPos 2026
 
 A small cash POS for the Software Engineering Practice assignment.
 
@@ -55,8 +55,6 @@ Other commands: `find RECEIPT_ID`, `cancel`, `quit`. Product identifiers are MIL
 - `docs/*.puml`: editable PlantUML source for eight UML views
 - `docs/*.png`: rendered UML diagrams and actual console transcript image
 - `submission/`: final report, slides and quiz answers
-- `GITHUB_GUIDE_zh.md`: upload, personal branch and evidence instructions
-- `VIDEO_SCRIPT.md`: slide-led recording script
 - `LOCAL_GIT_HISTORY.txt`: real local commit history, once generated
 
 ## Before submission
