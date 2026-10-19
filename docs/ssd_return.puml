@@ -1,0 +1,8 @@
+@startuml
+actor Cashier
+participant ":POS" as POS
+Cashier -> POS: findSale(receiptId)
+POS --> Cashier: original lines and remaining quantities
+Cashier -> POS: completeReturn(receiptId, items, token)
+POS --> Cashier: refund receipt and cash refund amount
+@enduml

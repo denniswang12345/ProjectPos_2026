@@ -1,0 +1,22 @@
+@startuml
+participant ":CashierUI" as UI
+participant ":PosController" as C
+participant ":Sale" as S
+participant ":SQLiteRepository" as R
+UI -> C: enter_item(sku, qty)
+C -> R: product(sku)
+R --> C: ProductDescription
+C -> S: add(product, qty)
+UI -> C: end_sale()
+C -> S: read total; set state ENDED
+UI -> C: make_cash_payment(amount, token)
+C -> R: BEGIN IMMEDIATE; check token
+alt exact replay
+R --> C: stored receipt
+else first request
+C -> R: save sale, payment and lines
+C -> R: decrease stock; save token receipt
+C -> R: COMMIT
+end
+C --> UI: receipt and change
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+actor Cashier
+participant ":POS" as POS
+Cashier -> POS: makeNewSale()
+loop each product
+Cashier -> POS: enterItem(sku, quantity)
+POS --> Cashier: description, price, running total
+end
+Cashier -> POS: endSale()
+POS --> Cashier: total
+Cashier -> POS: makeCashPayment(amount, token)
+POS --> Cashier: receipt, change
+@enduml

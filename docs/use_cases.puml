@@ -1,0 +1,11 @@
+@startuml
+left to right direction
+actor Cashier
+rectangle "Small Supermarket POS" {
+usecase "Process Sale" as Sale
+usecase "Handle Returns" as Ret
+}
+Cashier -- Sale
+Cashier -- Ret
+note bottom of Cashier : Customer interacts through the cashier.
+@enduml

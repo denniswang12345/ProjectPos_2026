@@ -1,0 +1,13 @@
+@startuml
+package Presentation { [Console functions] }
+package Application { [PosController] }
+package Domain { [Sale and line items]
+[Return and line items]
+[ProductDescription] }
+package Persistence { [SQLiteRepository]
+database SQLite }
+Presentation ..> Application
+Application ..> Domain
+Application ..> Persistence
+note bottom : Logical packages are colocated in pos.py in this teaching version.
+@enduml
