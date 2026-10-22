@@ -1,4 +1,4 @@
-﻿# ProjectPos 2026
+# ProjectPos 2026
 
 A small cash POS for the Software Engineering Practice assignment.
 
@@ -55,8 +55,18 @@ Other commands: `find RECEIPT_ID`, `cancel`, `quit`. Product identifiers are MIL
 - `docs/*.puml`: editable PlantUML source for eight UML views
 - `docs/*.png`: rendered UML diagrams and actual console transcript image
 - `submission/`: final report, slides and quiz answers
-- `LOCAL_GIT_HISTORY.txt`: real local commit history, once generated
+- `GIT_COMMAND_HISTORY.txt`: original PowerShell remote-workflow transcript
+- `docs/screenshots/`: original student-captured execution and GitHub evidence
+- `VIDEO_URL.txt`: recorded presentation and repository links
 
-## Before submission
+## Recorded presentation
 
-Confirm that the instructor accepts an individual project. Record the video, upload it to bilibili and add its actual URL to the report cover. Complete the GitHub push and capture real remote command evidence. The proposed Scrum plan and ideal burndown do not claim elapsed multi-day progress or actual review meetings.
+https://www.bilibili.com/video/BV1xgnp64E3X/
+
+The final report contains the video URL and eight original execution and Git evidence screenshots. The personal development branch is retained after merging into main. The agile plan and ideal burndown are planning artifacts; no historical daily sprint measurements or group meetings are claimed.
+
+## Recorded presentation
+
+https://www.bilibili.com/video/BV1xgnp64E3X/
+
+The final report contains the video URL and eight original execution and Git evidence screenshots. The personal development branch is retained after merging into main. The agile plan and ideal burndown are planning artifacts; no historical daily sprint measurements or group meetings are claimed.
